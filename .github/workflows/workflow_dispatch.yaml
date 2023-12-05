@@ -1,0 +1,37 @@
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      boolean_default_true:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+        default: true
+      boolean_default_false:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+        default: 'false'
+
+env:
+  LOG_LEVEL: ${{ inputs.logLevel }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
