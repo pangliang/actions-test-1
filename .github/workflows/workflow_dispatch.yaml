@@ -33,5 +33,9 @@ env:
 jobs:
   build:
     runs-on: self-hosted
+    container:
+      image: ubuntu-22.04
+      volumes:
+        - maven-cache:/root/.m2
     steps:
       - run: env
