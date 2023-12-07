@@ -31,6 +31,15 @@ on:
         default: 'asdfafasfasfasfd'
       some_text_2:
         required: true
+      number_1:
+        type: number
+        required: true
+        description: 'some test'
+        default: '1000'
+      number_2:
+        type: number
+        required: false
+        description: 'some test'
 
 env:
   LOG_LEVEL: ${{ inputs.logLevel }}
