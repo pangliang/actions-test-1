@@ -22,7 +22,6 @@ on:
         type: boolean
         default: true
       boolean_default_false:
-        description: 'Test scenario tags'
         required: false
         type: boolean
         default: 'false'
