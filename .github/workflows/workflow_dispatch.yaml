@@ -25,6 +25,12 @@ on:
         required: false
         type: boolean
         default: 'false'
+      some_text:
+        description: 'some test'
+        required: false
+        default: 'asdfafasfasfasfd'
+      some_text_2:
+        required: true
 
 env:
   LOG_LEVEL: ${{ inputs.logLevel }}
