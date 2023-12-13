@@ -1,45 +1,8 @@
 name: Docker Image CI
 
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
-      boolean_default_true:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
-        default: true
-      boolean_default_false:
-        required: false
-        type: boolean
-        default: 'false'
-      some_text:
-        description: 'some test'
-        required: false
-        default: 'asdfafasfasfasfd'
-      some_text_2:
-        required: true
-      number_1:
-        type: number
-        required: true
-        description: 'some test'
-        default: '1000'
-      number_2:
-        type: number
-        required: false
-        description: 'some test'
+on: 
+  - push
+  - workflow_dispatch
 
 env:
   LOG_LEVEL: ${{ inputs.logLevel }}
