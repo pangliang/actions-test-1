@@ -1,8 +1,63 @@
 name: Docker Image CI
 
 on: 
-  - push
-  - workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      boolean_default_true:
+        description: 'Test scenario tags'
+        required: true
+        type: boolean
+        default: true
+      boolean_default_false:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+        default: false
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+        default: 'environment values'
+      number_required_1:
+        description: 'number '
+        type: number
+        required: true
+        default: '100'
+      number_required_2:
+        description: 'number'
+        type: number
+        required: true
+        default: '100'
+      number_required_3:
+        description: 'number'
+        type: number
+        required: true
+        default: '100'
+      number_1:
+        description: 'number'
+        type: number
+        required: false
+      number_2:
+        description: 'number'
+        type: number
+        required: false
+      number_3:
+        description: 'number'
+        type: number
+        required: false
 
 env:
   LOG_LEVEL: ${{ inputs.logLevel }}
